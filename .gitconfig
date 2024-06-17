@@ -1,0 +1,61 @@
+[user]
+#	email = fake@fake.com
+	name = Doug Slater
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = nvimdiff
+[mergetool]
+    prompt = true
+    keepBackup = false
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
+[pull]
+  rebase = false
+[fetch]
+  prune = false
+[rebase]
+  autoStash = false
+[alias]
+  contributors = shortlog --summary --numbered
+  co = checkout # checkout existing branch (== git switch)
+  cb = checkout -b # checkout new branch based off current (== git switch -c)
+  cf = checkout -- # checkout file (== git restore)
+  cm = commit -m
+  st = status
+  sv = status -v
+  mt = mergetool
+  gpc = cherry-pick --continue
+  rbc = rebase --continue
+  ro = rebase --onto 
+  wta = worktree add
+  wtl = worktree list
+  rmbr = branch -D
+  poh = push origin HEAD
+  psuoh = push --set-upstream origin HEAD
+
+  sw = switch # == checkout <branchname>
+  swc = switch -c # == checkout -b <newbranchname>
+  stashall = stash --include-untracked
+
+  # undo last commit
+  undo = reset HEAD~
+  boom = reset --hard HEAD
+  nuke = clean -dfX
+
+  # "Branches"
+  br = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/heads
+
+  # "Log line"
+  ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+
+	next = stack next
+	prev = stack previous
+	reword = stack reword
+	amend = stack amend
+	sync = stack sync
+	run = stack run
