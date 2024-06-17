@@ -1,0 +1,74 @@
+" Set the leader key to space
+let mapleader = " "
+
+" Sync with system clipboard
+set clipboard=unnamedplus
+
+set clipboard^=ideaput
+
+" Navigation and actions
+:map gt <Action>(GotoSymbol)
+:map gr <Action>(FindUsages)
+:map gi <Action>(ResharperGotoImplementation)
+:map bp <Action>(ToggleLineBreakpoint)
+:map m <Action>(MethodDown)
+:map M <Action>(MethodUp)
+:map gp <Action>(PeekDefinition)
+:map gd <Action>(GotoDeclaration)
+:map <C-o> <Action>(Back)
+:map <C-i> <Action>(Forward)
+:map <leader>en <Action>(GotoNextError)
+:map <leader>ep <Action>(GotoPreviousError)
+
+" Refactoring
+:map gf <Action>(ReformatCode)
+:map <leader>c <Action>(CommentByLineComment)
+:map <leader>u <Action>(CommentByLineComment)
+:map <leader>rr <Action>(RenameElement)
+:map <leader>rrp <Action>(ChangeSignature)
+:map <leader>rem <Action>(ExtractMethod)
+
+" Debugging
+:map <leader>bp <Action>(ToggleLineBreakpoint)
+
+" Testing
+:map <leader>rt <Action>(RiderUnitTestRunContextAction)
+:map <leader>dt <Action>(RiderUnitTestDebugContextAction)
+
+" Basic Vim settings
+set number              " Show line numbers
+set relativenumber      " Show relative line numbers
+set tabstop=4           " Number of spaces in a tab
+set shiftwidth=4        " Number of spaces to use for autoindent
+set expandtab           " Use spaces instead of tabs
+set smartindent         " Smart indentation
+set autoindent          " Auto indentation
+set ignorecase          " Ignore case when searching
+set smartcase           " Override ignorecase if search pattern contains uppercase
+set incsearch           " Incremental search
+set hlsearch            " Highlight search results
+set cursorline          " Highlight current line
+set wrap                " Wrap long lines
+set wildmenu            " Enhanced command line completion
+set wildmode=longest:list,full
+set showcmd             " Show typed command
+
+" Center screen after n or N during search
+nnoremap n nzz
+nnoremap N Nzz
+
+" Quick save
+nnoremap <leader>w :w<CR>
+
+" Quick close
+nnoremap <leader>q :q<CR>
+
+" Reload vimrc
+nnoremap <leader>rc :source ~/.ideavimrc<CR>
+
+" Paste but keep in buffer
+nnoremap <leader>p "0p
+vnoremap <leader>p "0p
+
+" Clear search highlight
+nnoremap <leader>h :nohlsearch<CR>

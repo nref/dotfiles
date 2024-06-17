@@ -1,0 +1,66 @@
+let mapleader=" "
+set timeout timeoutlen=500 "500ms after leader key
+set number relativenumber
+
+" Case-insensitive search
+set ignorecase
+
+" Automatically switch to case-sensitive search if any capital letters are
+" used. Requires `set ignorecase` to already be active.
+set smartcase
+
+" Show what we have typed
+set showcmd
+
+" Center screen after n or N during search
+nnoremap n nzz
+nnoremap N Nzz
+
+" Quick save
+nnoremap <Leader>w :w<CR>
+
+" Quick close
+nnoremap <Leader>q :q<CR>
+
+" Reload vimrc
+nnoremap <Leader>rc :source ~/_vsvimrc<CR>
+
+" Paste but keep in buffer
+nnoremap <Leader>p "0p
+vnoremap <Leader>p "0p
+
+" -- VsVim
+
+" Sync with system clipboard
+set clipboard=unnamed
+
+" Navigate
+nnoremap m :vsc Edit.NextMethod<CR>
+nnoremap M :vsc Edit.PreviousMethod<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap gp :vsc Edit.PeekDefinition<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap gt :vsc Edit.GoToAll<CR>
+nnoremap <C-o> :vsc View.NavigateBackward<CR>
+nnoremap <C-i> :vsc View.NavigateForward<CR>
+nnoremap <Leader>en :vsc View.NextError<CR>
+nnoremap <Leader>ep :vsc View.PreviousError<CR>
+
+" Refactoring
+nnoremap gf :vsc Edit.FormatDocument<CR>
+vnoremap <Leader>c :vsc Edit.CommentSelection<CR>
+vnoremap <Leader>u :vsc Edit.UncommentSelection<CR>
+" <Esc>bcw: leave insert, jump back a word, change word
+"nnoremap <Leader>rn :vsc refactor.Rename<CR><ESC>bcw
+nnoremap <Leader>rr :vsc refactor.Rename<CR>
+nnoremap <Leader>rrp :vsc Refactor.ReorderParameters<CR>
+vnoremap <Leader>rem :vsc Refactor.ExtractMethod<CR>
+
+" Debugging
+nnoremap <Leader>bp :vsc Debug.ToggleBreakpoint<CR>
+
+" Testing
+nnoremap <Leader>dt :vsc TestExplorer.DebugAllTestsInContext<CR>
+
+" For more, see NormalCommand in VsVim source code
