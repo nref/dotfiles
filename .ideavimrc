@@ -9,7 +9,7 @@ set clipboard^=ideaput
 " Navigation and actions
 :map gt <Action>(GotoSymbol)
 :map gr <Action>(FindUsages)
-:map gi <Action>(ResharperGotoImplementation)
+:map gi <Action>(ReSharperGotoImplementation)
 :map bp <Action>(ToggleLineBreakpoint)
 :map m <Action>(MethodDown)
 :map M <Action>(MethodUp)
@@ -30,9 +30,10 @@ set clipboard^=ideaput
 
 " Debugging
 :map <leader>bp <Action>(ToggleLineBreakpoint)
+:map dg <Action>(Debug)
 
 " Testing
-:map <leader>rt <Action>(RiderUnitTestRunContextAction)
+:map <leader>rt <Action>(RiderUnitTestContextAction)
 :map <leader>dt <Action>(RiderUnitTestDebugContextAction)
 
 " Basic Vim settings
