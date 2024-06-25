@@ -19,5 +19,4 @@ I use scoop to quickly get up and running on a machine. Here are the apps I have
 - scoop
 - servicebusexplorer
 - terraform
-- scoop_apps.md
-
+- wezterm

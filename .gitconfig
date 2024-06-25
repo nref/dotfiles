@@ -1,5 +1,5 @@
 [user]
-#	email = fake@fake.com
+	email = fake@fake.com
 	name = Doug Slater
 [diff]
     tool = nvimdiff
@@ -41,6 +41,7 @@
   sw = switch # == checkout <branchname>
   swc = switch -c # == checkout -b <newbranchname>
   stashall = stash --include-untracked
+	stashu = "!git stash push -S; git stash; git stash pop --index stash@{1}"
 
   # undo last commit
   undo = reset HEAD~
