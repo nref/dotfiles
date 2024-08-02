@@ -10,7 +10,8 @@ function tail() {
 }
 
 function gacp([string] $message) {
-    echo-command("git add .; git commit -m $message; git push")
+    echo-command("git add .; git commit -m '$message'; git push")
+    iex gbl
 }
 
 function gco([string] $flags) {
