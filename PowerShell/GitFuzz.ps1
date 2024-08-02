@@ -9,6 +9,10 @@ function tail() {
     Get-Content $args[0] -wait
 }
 
+function gacp([string] $message) {
+    echo-command("git add .; git commit -m $message; git push")
+}
+
 function gco([string] $flags) {
     echo-command("git checkout $flags")
     iex gbl

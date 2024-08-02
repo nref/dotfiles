@@ -51,6 +51,8 @@ nnoremap <Leader>ep :vsc View.PreviousError<CR>
 nnoremap gf :vsc Edit.FormatDocument<CR>
 vnoremap <Leader>c :vsc Edit.CommentSelection<CR>
 vnoremap <Leader>u :vsc Edit.UncommentSelection<CR>
+nnoremap <Leader>c :vsc Edit.CommentSelection<CR>
+nnoremap <Leader>u :vsc Edit.UncommentSelection<CR>
 " <Esc>bcw: leave insert, jump back a word, change word
 "nnoremap <Leader>rn :vsc refactor.Rename<CR><ESC>bcw
 nnoremap <Leader>rr :vsc refactor.Rename<CR>
@@ -62,5 +64,6 @@ nnoremap <Leader>bp :vsc Debug.ToggleBreakpoint<CR>
 
 " Testing
 nnoremap <Leader>dt :vsc TestExplorer.DebugAllTestsInContext<CR>
+nnoremap <Leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
 
 " For more, see NormalCommand in VsVim source code
