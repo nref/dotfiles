@@ -11,7 +11,6 @@ function tail() {
 
 function gacp([string] $message) {
     echo-command("git add .; git commit -m '$message'; git push")
-    iex gbl
 }
 
 function gco([string] $flags) {
@@ -27,6 +26,10 @@ function gb([string] $flags) {
 function gbl([string] $flags) {
     write-host "Listing branches by date..."
     echo-command("git branch --list --sort=-committerdate $flags")
+}
+
+function gbd([string] $arguments) {
+    echo-command("git branch -D $arguments")
 }
 
 function git-status([string] $flags, [string] $arguments) {
@@ -88,6 +91,19 @@ function fzb {
     }
 
     return $branch.Trim()
+}
+
+# "FuzzyDelete"
+# Delete first matching branch
+function fzd {
+    param (
+        [string]$searchString = ""
+    )
+
+    $branch = fzb -searchString $searchString
+    if ($branch) {
+        git branch -D $branch
+    }
 }
 
 # "FuzzySwitch"
