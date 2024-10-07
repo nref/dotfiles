@@ -94,6 +94,11 @@ gcpa() {
     echo_command "git cherry-pick --abort"
 }
 
+# leading and trailing whitespace
+trim_whitespace() {
+    echo "$1" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'
+}
+
 # find a branch using fzf
 fzb() {
     local searchString="${1:-}"
@@ -111,6 +116,7 @@ fzb() {
         branch=$(echo "$branch" | head -n 1)
     fi
 
+    branch=$(trim_whitespace "$branch")
     echo "$branch"
 }
 
