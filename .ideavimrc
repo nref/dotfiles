@@ -10,7 +10,6 @@ set clipboard^=ideaput
 :map gt <Action>(GotoSymbol)
 :map gr <Action>(FindUsages)
 :map gi <Action>(ReSharperGotoImplementation)
-:map bp <Action>(ToggleLineBreakpoint)
 :map m <Action>(MethodDown)
 :map M <Action>(MethodUp)
 :map gp <Action>(PeekDefinition)
@@ -29,7 +28,7 @@ set clipboard^=ideaput
 :map <leader>rem <Action>(ExtractMethod)
 
 " Debugging
-:map <leader>bp <Action>(ToggleLineBreakpoint)
+:map <leader>pb <Action>(ToggleLineBreakpoint)
 :map dg <Action>(Debug)
 
 " Testing
