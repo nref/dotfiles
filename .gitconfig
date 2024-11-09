@@ -1,17 +1,19 @@
 [user]
-	email = fake@fake.com
-	name = Doug Slater
+  name = Doug Slater
+  email = fake@fake.com
 [diff]
-    tool = nvimdiff
+  tool = nvimdiff
+  colorMoved = default
 [difftool]
-    prompt = false
+  prompt = false
 [difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
-    tool = nvimdiff
+  tool = nvimdiff
+  conflictstyle = diff3
 [mergetool]
-    prompt = true
-    keepBackup = false
+  prompt = true
+  keepBackup = false
 [mergetool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
 [pull]
@@ -41,7 +43,7 @@
   sw = switch # == checkout <branchname>
   swc = switch -c # == checkout -b <newbranchname>
   stashall = stash --include-untracked
-	stashu = "!git stash push -S; git stash; git stash pop --index stash@{1}"
+  stashu = "!git stash push -S; git stash; git stash pop --index stash@{1}"
 
   # undo last commit
   undo = reset HEAD~
@@ -54,9 +56,16 @@
   # "Log line"
   ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
-	next = stack next
-	prev = stack previous
-	reword = stack reword
-	amend = stack amend
-	sync = stack sync
-	run = stack run
+[core]
+  autocrlf = true
+	longpaths = true
+  pager = delta
+[safe]
+	directory = F:/repos/BrowseRouter
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  features = arctic-fox
+[include]
+  path = ~/delta-themes.gitconfig
