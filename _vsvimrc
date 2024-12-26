@@ -67,3 +67,6 @@ nnoremap <Leader>dt :vsc TestExplorer.DebugAllTestsInContext<CR>
 nnoremap <Leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
 
 " For more, see NormalCommand in VsVim source code
+
+" -- PeasyMotion
+nnoremap ;; gS:vsc Tools.InvokePeasyMotion<CR>
