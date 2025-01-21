@@ -34,6 +34,10 @@ vnoremap <Leader>p "0p
 " Sync with system clipboard
 set clipboard=unnamed
 
+" Ctrl+C doesn't seem to work. Map it to Esc
+inoremap <C-c> <Esc>
+vnoremap <C-c> <Esc>
+
 " Navigate
 nnoremap m :vsc Edit.NextMethod<CR>
 nnoremap M :vsc Edit.PreviousMethod<CR>
